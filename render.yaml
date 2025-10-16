@@ -1,0 +1,25 @@
+services:
+  - type: web
+    name: SmartTradeHub
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn -w 4 -k uvicorn.workers.UvicornWorker smart_tradehub:app
+    envVars:
+      - key: BOT_TOKEN
+        sync: false
+      - key: CHAT_ID
+        sync: false
+      - key: BINANCE_API_KEY
+        sync: false
+      - key: BINANCE_API_SECRET
+        sync: false
+      - key: TESTNET
+        value: false
+      - key: INTERVAL
+        value: 15m
+      - key: CHECK_EVERY_SEC
+        value: 900
+      - key: SCORE_THRESHOLD
+        value: 0.8
+      - key: TOP_N
+        value: 300
