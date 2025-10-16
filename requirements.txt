@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+requests
+pandas
+numpy
+ccxt
+ta
+python-telegram-bot==20.6
+python-dotenv
+gunicorn
